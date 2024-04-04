@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="Zombies\GameManager.cpp">
+      <Filter>Zombies</Filter>
+    </ClCompile>
+    <ClCompile Include="Zombies\PlayerAnimator.cpp">
+      <Filter>Zombies</Filter>
+    </ClCompile>
+    <ClCompile Include="Zombies\PlayerInventory.cpp">
+      <Filter>Zombies</Filter>
+    </ClCompile>
+    <ClCompile Include="Zombies\PlayerMovement.cpp">
+      <Filter>Zombies</Filter>
+    </ClCompile>
+    <ClCompile Include="Zombies\Scenes\MainMenuScene.cpp">
+      <Filter>Zombies\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="Zombies\Scenes\GameScene.cpp">
+      <Filter>Zombies\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\AnimatedSprite.cpp">
+      <Filter>SAGE</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Behaviour.cpp">
+      <Filter>SAGE</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Button.cpp">
+      <Filter>SAGE</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Collider.cpp">
+      <Filter>SAGE</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Component.cpp">
+      <Filter>SAGE</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\DirectX.cpp">
+      <Filter>SAGE</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Font.cpp">
+      <Filter>SAGE</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\GameObject.cpp">
+      <Filter>SAGE</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Gizmos.cpp">
+      <Filter>SAGE</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\PhysicsBody.cpp">
+      <Filter>SAGE</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Sage.cpp">
+      <Filter>SAGE</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\SageMath.cpp">
+      <Filter>SAGE</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Sprite.cpp">
+      <Filter>SAGE</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\TextureType.cpp">
+      <Filter>SAGE</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Timer.cpp">
+      <Filter>SAGE</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Transform.cpp">
+      <Filter>SAGE</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Zombies\GameManager.h">
+      <Filter>Zombies</Filter>
+    </ClInclude>
+    <ClInclude Include="Zombies\PlayerAnimator.h">
+      <Filter>Zombies</Filter>
+    </ClInclude>
+    <ClInclude Include="Zombies\PlayerInventory.h">
+      <Filter>Zombies</Filter>
+    </ClInclude>
+    <ClInclude Include="Zombies\PlayerMovement.h">
+      <Filter>Zombies</Filter>
+    </ClInclude>
+    <ClInclude Include="Zombies\Scenes\MainMenuScene.h">
+      <Filter>Zombies\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="Zombies\Scenes\GameScene.h">
+      <Filter>Zombies\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\AnimatedSprite.h">
+      <Filter>SAGE</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Behaviour.h">
+      <Filter>SAGE</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Button.h">
+      <Filter>SAGE</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Collider.h">
+      <Filter>SAGE</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Component.h">
+      <Filter>SAGE</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\DirectX.h">
+      <Filter>SAGE</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Font.h">
+      <Filter>SAGE</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\GameObject.h">
+      <Filter>SAGE</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Gizmos.h">
+      <Filter>SAGE</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\IColliderListener.h">
+      <Filter>SAGE</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\IKeyboardListener.h">
+      <Filter>SAGE</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\IMouseListener.h">
+      <Filter>SAGE</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\PhysicsBody.h">
+      <Filter>SAGE</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Sage.h">
+      <Filter>SAGE</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\SageMath.h">
+      <Filter>SAGE</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Scene.h">
+      <Filter>SAGE</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Sprite.h">
+      <Filter>SAGE</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\TextureType.h">
+      <Filter>SAGE</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Timer.h">
+      <Filter>SAGE</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Transform.h">
+      <Filter>SAGE</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="SAGE">
+      <UniqueIdentifier>{933b3d38-4de4-43bb-8251-d862f66e5180}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Zombies">
+      <UniqueIdentifier>{577f45b4-03a2-4cd7-be8e-7d704fcee359}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Zombies\Scenes">
+      <UniqueIdentifier>{1a847952-505e-44c9-b87b-a16b725793d6}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
