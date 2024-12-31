@@ -1,7 +1,7 @@
 ﻿#include "PlayerInventory.h"
 
-#include "../Engine/Collider.h"
-#include "../Engine/PhysicsBody.h"
+#include "../Engine/Components/Collider.h"
+#include "../Engine/Components/PhysicsBody.h"
 
 void PlayerInventory::Start()
 {

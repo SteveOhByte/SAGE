@@ -1,6 +1,6 @@
 ﻿#pragma once
 #include "PlayerAnimator.h"
-#include "../Engine/Behaviour.h"
+#include "../Engine/Components/Behaviour.h"
 #include "Scenes/GameScene.h"
 
 struct Weapon

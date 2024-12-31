@@ -1,5 +1,5 @@
 ﻿#pragma once
-#include "../Engine/Behaviour.h"
+#include "../Engine/Components/Behaviour.h"
 
 class PlayerAnimator : public Behaviour
 {

@@ -1,6 +1,8 @@
 ﻿#pragma once
 #include "PlayerAnimator.h"
-#include "../Engine/Behaviour.h"
+#include "../Engine/Components/Behaviour.h"
+#include "../Engine/Components/Transform.h"
+#include "../Engine/GameObject.h"
 
 class PlayerMovement : public Behaviour
 {

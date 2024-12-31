@@ -3,6 +3,16 @@
 #include "d3d11.h"
 #include "SimpleMath.h"
 
+#define float2 DirectX::SimpleMath::Vector2
+
+struct Box
+{
+	float2 topLeft;
+	float2 topRight;
+	float2 bottomLeft;
+	float2 bottomRight;
+};
+
 class SageMath
 {
 public:

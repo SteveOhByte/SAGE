@@ -1,22 +1,20 @@
-C:\Users\miste\OneDrive - NC\GraphicsProgramming\SAGE\SAGE\Engine\AnimatedSprite.cpp;C:\Users\miste\OneDrive - NC\GraphicsProgramming\SAGE\SAGE\Debug\AnimatedSprite.obj
-C:\Users\miste\OneDrive - NC\GraphicsProgramming\SAGE\SAGE\Engine\Behaviour.cpp;C:\Users\miste\OneDrive - NC\GraphicsProgramming\SAGE\SAGE\Debug\Behaviour.obj
-C:\Users\miste\OneDrive - NC\GraphicsProgramming\SAGE\SAGE\Engine\Button.cpp;C:\Users\miste\OneDrive - NC\GraphicsProgramming\SAGE\SAGE\Debug\Button.obj
-C:\Users\miste\OneDrive - NC\GraphicsProgramming\SAGE\SAGE\Engine\Collider.cpp;C:\Users\miste\OneDrive - NC\GraphicsProgramming\SAGE\SAGE\Debug\Collider.obj
-C:\Users\miste\OneDrive - NC\GraphicsProgramming\SAGE\SAGE\Engine\Component.cpp;C:\Users\miste\OneDrive - NC\GraphicsProgramming\SAGE\SAGE\Debug\Component.obj
-C:\Users\miste\OneDrive - NC\GraphicsProgramming\SAGE\SAGE\Engine\DirectX.cpp;C:\Users\miste\OneDrive - NC\GraphicsProgramming\SAGE\SAGE\Debug\DirectX.obj
-C:\Users\miste\OneDrive - NC\GraphicsProgramming\SAGE\SAGE\Engine\Gizmos.cpp;C:\Users\miste\OneDrive - NC\GraphicsProgramming\SAGE\SAGE\Debug\Gizmos.obj
-C:\Users\miste\OneDrive - NC\GraphicsProgramming\SAGE\SAGE\Engine\PhysicsBody.cpp;C:\Users\miste\OneDrive - NC\GraphicsProgramming\SAGE\SAGE\Debug\PhysicsBody.obj
-C:\Users\miste\OneDrive - NC\GraphicsProgramming\SAGE\SAGE\Engine\SageMath.cpp;C:\Users\miste\OneDrive - NC\GraphicsProgramming\SAGE\SAGE\Debug\SageMath.obj
-C:\Users\miste\OneDrive - NC\GraphicsProgramming\SAGE\SAGE\Engine\GameObject.cpp;C:\Users\miste\OneDrive - NC\GraphicsProgramming\SAGE\SAGE\Debug\GameObject.obj
-C:\Users\miste\OneDrive - NC\GraphicsProgramming\SAGE\SAGE\Engine\Sage.cpp;C:\Users\miste\OneDrive - NC\GraphicsProgramming\SAGE\SAGE\Debug\Sage.obj
-C:\Users\miste\OneDrive - NC\GraphicsProgramming\SAGE\SAGE\Engine\Font.cpp;C:\Users\miste\OneDrive - NC\GraphicsProgramming\SAGE\SAGE\Debug\Font.obj
-C:\Users\miste\OneDrive - NC\GraphicsProgramming\SAGE\SAGE\Engine\Sprite.cpp;C:\Users\miste\OneDrive - NC\GraphicsProgramming\SAGE\SAGE\Debug\Sprite.obj
-C:\Users\miste\OneDrive - NC\GraphicsProgramming\SAGE\SAGE\Engine\TextureType.cpp;C:\Users\miste\OneDrive - NC\GraphicsProgramming\SAGE\SAGE\Debug\TextureType.obj
-C:\Users\miste\OneDrive - NC\GraphicsProgramming\SAGE\SAGE\Engine\Timer.cpp;C:\Users\miste\OneDrive - NC\GraphicsProgramming\SAGE\SAGE\Debug\Timer.obj
-C:\Users\miste\OneDrive - NC\GraphicsProgramming\SAGE\SAGE\Engine\Transform.cpp;C:\Users\miste\OneDrive - NC\GraphicsProgramming\SAGE\SAGE\Debug\Transform.obj
-C:\Users\miste\OneDrive - NC\GraphicsProgramming\SAGE\SAGE\Zombies\GameManager.cpp;C:\Users\miste\OneDrive - NC\GraphicsProgramming\SAGE\SAGE\Debug\GameManager.obj
-C:\Users\miste\OneDrive - NC\GraphicsProgramming\SAGE\SAGE\Zombies\PlayerAnimator.cpp;C:\Users\miste\OneDrive - NC\GraphicsProgramming\SAGE\SAGE\Debug\PlayerAnimator.obj
-C:\Users\miste\OneDrive - NC\GraphicsProgramming\SAGE\SAGE\Zombies\PlayerInventory.cpp;C:\Users\miste\OneDrive - NC\GraphicsProgramming\SAGE\SAGE\Debug\PlayerInventory.obj
-C:\Users\miste\OneDrive - NC\GraphicsProgramming\SAGE\SAGE\Zombies\PlayerMovement.cpp;C:\Users\miste\OneDrive - NC\GraphicsProgramming\SAGE\SAGE\Debug\PlayerMovement.obj
-C:\Users\miste\OneDrive - NC\GraphicsProgramming\SAGE\SAGE\Zombies\Scenes\GameScene.cpp;C:\Users\miste\OneDrive - NC\GraphicsProgramming\SAGE\SAGE\Debug\GameScene.obj
-C:\Users\miste\OneDrive - NC\GraphicsProgramming\SAGE\SAGE\Zombies\Scenes\MainMenuScene.cpp;C:\Users\miste\OneDrive - NC\GraphicsProgramming\SAGE\SAGE\Debug\MainMenuScene.obj
+C:\Users\smerr\Desktop\SAGE\SAGE\Engine\Components\AnimatedSprite.cpp;C:\Users\smerr\Desktop\SAGE\SAGE\Debug\AnimatedSprite.obj
+C:\Users\smerr\Desktop\SAGE\SAGE\Engine\Components\Behaviour.cpp;C:\Users\smerr\Desktop\SAGE\SAGE\Debug\Behaviour.obj
+C:\Users\smerr\Desktop\SAGE\SAGE\Engine\Components\Button.cpp;C:\Users\smerr\Desktop\SAGE\SAGE\Debug\Button.obj
+C:\Users\smerr\Desktop\SAGE\SAGE\Engine\Components\Collider.cpp;C:\Users\smerr\Desktop\SAGE\SAGE\Debug\Collider.obj
+C:\Users\smerr\Desktop\SAGE\SAGE\Engine\Components\PhysicsBody.cpp;C:\Users\smerr\Desktop\SAGE\SAGE\Debug\PhysicsBody.obj
+C:\Users\smerr\Desktop\SAGE\SAGE\Engine\Components\Sprite.cpp;C:\Users\smerr\Desktop\SAGE\SAGE\Debug\Sprite.obj
+C:\Users\smerr\Desktop\SAGE\SAGE\Engine\Graphics\DirectX.cpp;C:\Users\smerr\Desktop\SAGE\SAGE\Debug\DirectX.obj
+C:\Users\smerr\Desktop\SAGE\SAGE\Engine\Graphics\Font.cpp;C:\Users\smerr\Desktop\SAGE\SAGE\Debug\Font.obj
+C:\Users\smerr\Desktop\SAGE\SAGE\Engine\Graphics\TextureType.cpp;C:\Users\smerr\Desktop\SAGE\SAGE\Debug\TextureType.obj
+C:\Users\smerr\Desktop\SAGE\SAGE\Engine\SageMath.cpp;C:\Users\smerr\Desktop\SAGE\SAGE\Debug\SageMath.obj
+C:\Users\smerr\Desktop\SAGE\SAGE\Engine\GameObject.cpp;C:\Users\smerr\Desktop\SAGE\SAGE\Debug\GameObject.obj
+C:\Users\smerr\Desktop\SAGE\SAGE\Engine\Sage.cpp;C:\Users\smerr\Desktop\SAGE\SAGE\Debug\Sage.obj
+C:\Users\smerr\Desktop\SAGE\SAGE\Engine\Utilities\Gizmos.cpp;C:\Users\smerr\Desktop\SAGE\SAGE\Debug\Gizmos.obj
+C:\Users\smerr\Desktop\SAGE\SAGE\Engine\Utilities\Timer.cpp;C:\Users\smerr\Desktop\SAGE\SAGE\Debug\Timer.obj
+C:\Users\smerr\Desktop\SAGE\SAGE\Zombies\GameManager.cpp;C:\Users\smerr\Desktop\SAGE\SAGE\Debug\GameManager.obj
+C:\Users\smerr\Desktop\SAGE\SAGE\Zombies\PlayerAnimator.cpp;C:\Users\smerr\Desktop\SAGE\SAGE\Debug\PlayerAnimator.obj
+C:\Users\smerr\Desktop\SAGE\SAGE\Zombies\PlayerInventory.cpp;C:\Users\smerr\Desktop\SAGE\SAGE\Debug\PlayerInventory.obj
+C:\Users\smerr\Desktop\SAGE\SAGE\Zombies\PlayerMovement.cpp;C:\Users\smerr\Desktop\SAGE\SAGE\Debug\PlayerMovement.obj
+C:\Users\smerr\Desktop\SAGE\SAGE\Zombies\Scenes\GameScene.cpp;C:\Users\smerr\Desktop\SAGE\SAGE\Debug\GameScene.obj
+C:\Users\smerr\Desktop\SAGE\SAGE\Zombies\Scenes\MainMenuScene.cpp;C:\Users\smerr\Desktop\SAGE\SAGE\Debug\MainMenuScene.obj

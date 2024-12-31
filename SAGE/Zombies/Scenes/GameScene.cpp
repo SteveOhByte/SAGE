@@ -5,17 +5,18 @@
 #include "../GameManager.h"
 #include "../PlayerInventory.h"
 #include "../PlayerMovement.h"
-#include "../../Engine/AnimatedSprite.h"
-#include "../../Engine/Button.h"
-#include "../../Engine/Collider.h"
+#include "../../Engine/Components/AnimatedSprite.h"
+#include "../../Engine/Components/Button.h"
+#include "../../Engine/Components/Collider.h"
 #include "../../Engine/Sage.h"
 
 void GameScene::Initialize(ID3D11Device* device)
 {
 	this->device = device;
+	SetReferenceResolution(1920, 1080);
 	
 	backgroundGameObject = std::make_unique<GameObject>("Background");
-	const auto backgroundTransform = new Transform(Vector2(Sage::GetCentreX(), Sage::GetCentreY()), 0, 1);
+	const auto backgroundTransform = new Transform(Vector2(Screen::GetCentreX(), Screen::GetCentreY()), 0, 1);
 	const auto backgroundSprite = new Sprite();
 	backgroundSprite->Initialize(device, L"Game\\background.png", DirectX::Colors::White.v, 1);
 	backgroundGameObject->AddComponent(backgroundTransform);
@@ -26,7 +27,7 @@ void GameScene::Initialize(ID3D11Device* device)
 	gameManagerGameObject->AddComponent(gameManager);
 	
 	playerGameObject = std::make_unique<GameObject>("Player");
-	const auto playerTransform = new Transform(Vector2(Sage::GetCentreX(), Sage::GetCentreY()), 0, 0.25f);
+	const auto playerTransform = new Transform(Vector2(Screen::GetCentreX(), Screen::GetCentreY()), 0, 0.25f);
 	const auto playerSprite = new AnimatedSprite();
 	playerSprite->Initialize(device, DirectX::Colors::White.v, 0);
 	playerSprite->RegisterAnimationState("KnifeIdle", 289, 224, 15, L"Game\\Player\\Knife\\idle.png");
@@ -53,7 +54,7 @@ void GameScene::Initialize(ID3D11Device* device)
 	playerGameObject->AddComponent(playerAnimator);
 
 	zombieGameObject = std::make_unique<GameObject>("Zombie");
-	const auto zombieTransform = new Transform(Vector2(Sage::GetCentreX() + 400, Sage::GetCentreY()), 0, 0.25f);
+	const auto zombieTransform = new Transform(Vector2(Screen::GetCentreX() + REF(400), Screen::GetCentreY()), 0, 0.25f);
 	const auto zombieSprite = new AnimatedSprite();
 	zombieSprite->Initialize(device, DirectX::Colors::White.v, 1);
 	zombieSprite->RegisterAnimationState("Idle", 243, 224, 15, L"Game\\Zombie\\zombieIdle.png");
@@ -64,7 +65,7 @@ void GameScene::Initialize(ID3D11Device* device)
 	zombieGameObject->AddComponent(zombieSprite);
 
 	pauseTitleGameObject = std::make_unique<GameObject>("Pause Title");
-	const auto pauseTitleTransform = new Transform(Vector2(Sage::GetCentreX(), 150), 0, 1);
+	const auto pauseTitleTransform = new Transform(Vector2(Screen::GetCentreX(), REF(150)), 0, 1);
 	const auto pauseTitleSprite = new Sprite();
 	pauseTitleSprite->Initialize(device, L"UI\\pauseTitle.png", DirectX::Colors::White.v, 0);
 	pauseTitleGameObject->AddComponent(pauseTitleTransform);
@@ -72,7 +73,7 @@ void GameScene::Initialize(ID3D11Device* device)
 	pauseTitleGameObject->SetActive(false);
 
 	resumeButtonGameObject = std::make_unique<GameObject>("Resume Button");
-	const auto resumeButtonTransform = new Transform(Vector2(Sage::GetCentreX(), Sage::GetCentreY()), 0, 1);
+	const auto resumeButtonTransform = new Transform(Vector2(Screen::GetCentreX(), Screen::GetCentreY()), 0, 1);
 	const auto resumeButtonButton = new Button(device, L"UI\\resumeButtonNormal.png", L"UI\\resumeButtonHover.png", L"UI\\resumeButtonPressed.png", DirectX::Colors::White.v, 0, true);
 	resumeButtonButton->SetOnClickCallback([this]
 	{
@@ -83,7 +84,7 @@ void GameScene::Initialize(ID3D11Device* device)
 	resumeButtonGameObject->SetActive(false);
 
 	quitButtonGameObject = std::make_unique<GameObject>("Quit Button");
-	const auto quitButtonTransform = new Transform(Vector2(Sage::GetCentreX(), Sage::GetCentreY() + 180), 0, 1);
+	const auto quitButtonTransform = new Transform(Vector2(Screen::GetCentreX(), Screen::GetCentreY() + REF(180)), 0, 1);
 	const auto quitButtonButton = new Button(device, L"UI\\quitButtonNormal.png", L"UI\\quitButtonHover.png", L"UI\\quitButtonPressed.png", DirectX::Colors::White.v, 0, true);
 	quitButtonButton->SetOnClickCallback([]
 	{
@@ -94,21 +95,21 @@ void GameScene::Initialize(ID3D11Device* device)
 	quitButtonGameObject->SetActive(false);
 
 	bottomLeftBuildingsGameObject = std::make_unique<GameObject>("Bottom Left Buildings");
-	const auto bottomLeftBuildingsTransform = new Transform(Vector2(320, 867), 0, 1);
-	const auto bottomLeftBuildingsCollider = new Collider(BOX);
-	bottomLeftBuildingsCollider->SetBox(Box2D(bottomLeftBuildingsTransform->position, Vector2(653, 428)));
+	const auto bottomLeftBuildingsTransform = new Transform(Vector2(REF(320), REF(867)), 0, 1);
+	const auto bottomLeftBuildingsCollider = new Collider(RECTANGLE);
+	bottomLeftBuildingsCollider->SetSquare(Rect(bottomLeftBuildingsTransform->position, Vector2(653, 428)));
 	bottomLeftBuildingsCollider->DrawCollider(true);
 	bottomLeftBuildingsGameObject->AddComponent(bottomLeftBuildingsTransform);
 	bottomLeftBuildingsGameObject->AddComponent(bottomLeftBuildingsCollider);
 	
-	gameObjects.push_back(backgroundGameObject.get());
-	gameObjects.push_back(bottomLeftBuildingsGameObject.get());
-	gameObjects.push_back(gameManagerGameObject.get());
-	gameObjects.push_back(playerGameObject.get());
-	gameObjects.push_back(zombieGameObject.get());
-	gameObjects.push_back(pauseTitleGameObject.get());
-	gameObjects.push_back(resumeButtonGameObject.get());
-	gameObjects.push_back(quitButtonGameObject.get());
+	AddGameObject(backgroundGameObject.get());
+	AddGameObject(bottomLeftBuildingsGameObject.get());
+	AddGameObject(gameManagerGameObject.get());
+	AddGameObject(playerGameObject.get());
+	AddGameObject(zombieGameObject.get());
+	AddGameObject(pauseTitleGameObject.get());
+	AddGameObject(resumeButtonGameObject.get());
+	AddGameObject(quitButtonGameObject.get());
 
 	isActive = false;
 }

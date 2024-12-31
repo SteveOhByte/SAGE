@@ -1,16 +1,33 @@
-c:\users\miste\onedrive - nc\graphicsprogramming\sage\sage\debug\vc143.pdb
-c:\users\miste\onedrive - nc\graphicsprogramming\sage\sage\debug\vc143.idb
-c:\users\miste\onedrive - nc\graphicsprogramming\sage\sage\debug\transform.obj
-c:\users\miste\onedrive - nc\graphicsprogramming\sage\sage\debug\sagemath.obj
-c:\users\miste\onedrive - nc\graphicsprogramming\sage\sage\debug\component.obj
-c:\users\miste\onedrive - nc\graphicsprogramming\sage\sage\debug\playermovement.obj
-c:\users\miste\onedrive - nc\graphicsprogramming\sage\sage\debug\playerinventory.obj
-c:\users\miste\onedrive - nc\graphicsprogramming\sage\sage\debug\playeranimator.obj
-c:\users\miste\onedrive - nc\graphicsprogramming\sage\sage\debug\gamemanager.obj
-c:\users\miste\onedrive - nc\graphicsprogramming\sage\sage\debug\gameobject.obj
-c:\users\miste\onedrive - nc\graphicsprogramming\sage\sage\debug\button.obj
-c:\users\miste\onedrive - nc\graphicsprogramming\sage\sage\debug\behaviour.obj
-c:\users\miste\onedrive - nc\graphicsprogramming\sage\sage\debug\animatedsprite.obj
-c:\users\miste\onedrive - nc\graphicsprogramming\sage\sage\debug\sage.tlog\cl.command.1.tlog
-c:\users\miste\onedrive - nc\graphicsprogramming\sage\sage\debug\sage.tlog\cl.read.1.tlog
-c:\users\miste\onedrive - nc\graphicsprogramming\sage\sage\debug\sage.tlog\cl.write.1.tlog
+c:\users\smerr\desktop\sage-master\sage\debug\vc143.pdb
+c:\users\smerr\desktop\sage-master\sage\debug\vc143.idb
+c:\users\smerr\desktop\sage-master\sage\debug\mainmenuscene.obj
+c:\users\smerr\desktop\sage-master\sage\debug\gamescene.obj
+c:\users\smerr\desktop\sage-master\sage\debug\playermovement.obj
+c:\users\smerr\desktop\sage-master\sage\debug\playerinventory.obj
+c:\users\smerr\desktop\sage-master\sage\debug\playeranimator.obj
+c:\users\smerr\desktop\sage-master\sage\debug\gamemanager.obj
+c:\users\smerr\desktop\sage-master\sage\debug\gizmos.obj
+c:\users\smerr\desktop\sage-master\sage\debug\gameobject.obj
+c:\users\smerr\desktop\sage-master\sage\debug\sagemath.obj
+c:\users\smerr\desktop\sage-master\sage\debug\physicsbody.obj
+c:\users\smerr\desktop\sage-master\sage\debug\button.obj
+c:\users\smerr\desktop\sage-master\sage\debug\behaviour.obj
+c:\users\smerr\desktop\sage-master\sage\debug\animatedsprite.obj
+c:\users\smerr\desktop\sage-master\debug\sage.exe
+c:\users\smerr\desktop\sage-master\debug\sage.pdb
+c:\users\smerr\desktop\sage-master\sage\debug\sage.ilk
+c:\users\smerr\desktop\sage-master\sage\debug\collider.obj
+c:\users\smerr\desktop\sage-master\sage\debug\directx.obj
+c:\users\smerr\desktop\sage-master\sage\debug\font.obj
+c:\users\smerr\desktop\sage-master\sage\debug\sage.obj
+c:\users\smerr\desktop\sage-master\sage\debug\sprite.obj
+c:\users\smerr\desktop\sage-master\sage\debug\texturetype.obj
+c:\users\smerr\desktop\sage-master\sage\debug\timer.obj
+c:\users\smerr\desktop\sage-master\sage\debug\sage.tlog\cl.command.1.tlog
+c:\users\smerr\desktop\sage-master\sage\debug\sage.tlog\cl.items.tlog
+c:\users\smerr\desktop\sage-master\sage\debug\sage.tlog\cl.read.1.tlog
+c:\users\smerr\desktop\sage-master\sage\debug\sage.tlog\cl.write.1.tlog
+c:\users\smerr\desktop\sage-master\sage\debug\sage.tlog\link.command.1.tlog
+c:\users\smerr\desktop\sage-master\sage\debug\sage.tlog\link.read.1.tlog
+c:\users\smerr\desktop\sage-master\sage\debug\sage.tlog\link.secondary.1.tlog
+c:\users\smerr\desktop\sage-master\sage\debug\sage.tlog\link.write.1.tlog

@@ -2,21 +2,22 @@
 
 #include "Sage.h"
 
+#include <codecvt>
 #include <Windowsx.h>
 #include <SpriteBatch.h>
 #include "Audio.h"
 #include "SageMath.h"
 #include <DirectXColors.h>
-#include <iostream>
+#include <locale>
 #include <random>
 #include <sstream>
 
-#include "AnimatedSprite.h"
-#include "Behaviour.h"
-#include "Button.h"
-#include "Collider.h"
-#include "Gizmos.h"
-#include "PhysicsBody.h"
+#include "Components/AnimatedSprite.h"
+#include "Components/Behaviour.h"
+#include "Components/Button.h"
+#include "Components/Collider.h"
+#include "Utilities/Gizmos.h"
+#include "Components/PhysicsBody.h"
 #include "../Zombies/Scenes/MainMenuScene.h"
 #include "../Zombies/Scenes/GameScene.h"
 
@@ -45,13 +46,16 @@ int WINAPI WinMain(const HINSTANCE hInstance, HINSTANCE, PSTR, const int nShowCm
 
 // Constructor for the application
 Sage::Sage(const HINSTANCE hInstance)
-	: DirectXClass(hInstance)
+	: DirectXClass(hInstance), gizmoText(), gizmoColour()
 {
 	mousePos = Vector2(clientWidth * 0.5f, clientHeight * 0.5f);
 	spriteBatch = nullptr;
 
 	clearColour = Color(Colors::DarkGray.v);
 	isGamePaused = false;
+
+	gizmoText = L"";
+	gizmoColour = Colors::Magenta;
 }
 
 // Destructor for the application
@@ -64,9 +68,10 @@ Sage::~Sage()
 // TODO: Function poorly named, cleanup needed
 void Sage::InitializeTextures()
 {
-	Gizmos::Initialize(deviceContext, GetDevice());
+	harmoniaFont.InitializeFont(D3DDevice, deviceContext, L"..\\Font\\Harmonia.spritefont");
 	spriteBatch = new SpriteBatch(deviceContext);
-
+	Gizmos::sage = this;
+	
 	std::unique_ptr<Scene> mainMenuScene = std::make_unique<MainMenuScene>();
 	mainMenuScene->Initialize(D3DDevice);
 
@@ -174,7 +179,7 @@ LRESULT Sage::ProcessWindowMessages(const UINT msg, const WPARAM wParam, const L
 
 // Render the game
 void Sage::Render()
-{
+{	
 	spriteBatch->Begin(SpriteSortMode_BackToFront);
 	
 	// Draw the current scene
@@ -214,6 +219,59 @@ void Sage::Render()
 
 	spriteBatch->End();
 
+	if (!gizmoText.empty())
+		harmoniaFont.PrintMessage(75, Screen::GetHeight() - 100, gizmoText, gizmoColour);
+
+	DirectXClass::UpdateScreenSize();
+	deviceContext->VSSetConstantBuffers(0, 1, &screenSizeBuffer);
+	
+	// Draw the gizmo lines
+	for (const auto& line : gizmoLines)
+	{
+		// Calculate the line direction and normal
+		Vector2 lineDir = line.end - line.start;
+		lineDir.Normalize();
+		Vector2 normal(-lineDir.y, lineDir.x);
+		normal *= line.thickness * 0.5f;
+
+		// Create vertices for a rectangle
+		DirectX::VertexPositionColor vertices[6];
+    
+		// First triangle
+		vertices[0].position = DirectX::XMFLOAT3(line.start.x + normal.x, line.start.y + normal.y, 0.0f);
+		vertices[1].position = DirectX::XMFLOAT3(line.start.x - normal.x, line.start.y - normal.y, 0.0f);
+		vertices[2].position = DirectX::XMFLOAT3(line.end.x + normal.x, line.end.y + normal.y, 0.0f);
+    
+		// Second triangle
+		vertices[3].position = DirectX::XMFLOAT3(line.end.x + normal.x, line.end.y + normal.y, 0.0f);
+		vertices[4].position = DirectX::XMFLOAT3(line.start.x - normal.x, line.start.y - normal.y, 0.0f);
+		vertices[5].position = DirectX::XMFLOAT3(line.end.x - normal.x, line.end.y - normal.y, 0.0f);
+
+		// Set colors for all vertices
+		for (int i = 0; i < 6; i++)
+		{
+			vertices[i].color = DirectX::XMFLOAT4(line.colour.f[0], line.colour.f[1], 
+												 line.colour.f[2], line.colour.f[3]);
+		}
+
+		// Update vertex buffer with rectangle vertices
+		UpdateVertexBuffer(vertices, sizeof(vertices));
+
+		// Set up the pipeline
+		deviceContext->IASetInputLayout(inputLayout);
+		deviceContext->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
+    
+		UINT stride = sizeof(DirectX::VertexPositionColor);
+		UINT offset = 0;
+		deviceContext->IASetVertexBuffers(0, 1, &vertexBuffer, &stride, &offset);
+    
+		deviceContext->VSSetShader(vertexShader, nullptr, 0);
+		deviceContext->PSSetShader(pixelShader, nullptr, 0);
+
+		// Draw the triangles
+		deviceContext->Draw(6, 0);
+	}
+	
 	// render the base class
 	DirectXClass::Render();
 }
@@ -280,6 +338,16 @@ void Sage::Tick(float deltaTime)
 					
 					if (collider->CheckCollision(*otherCollider, newPosition))
 					{
+						const std::string& myNameStr = collider->GetGameObject()->name;
+						wstring_convert<codecvt_utf8_utf16<wchar_t>> converter;
+						const std::wstring& myName = converter.from_bytes(myNameStr);
+
+						const std::string& otherNameStr = otherCollider->GetGameObject()->name;
+						wstring_convert<codecvt_utf8_utf16<wchar_t>> otherConverter;
+						const std::wstring& otherName = otherConverter.from_bytes(otherNameStr);
+
+						OutputDebugString((L"Collision detected between \"" + myName + L"\" and \"" + otherName + L"\"").c_str());
+						
 						// Collision detected
 						physicsBody->SetVelocity(collider->Reflect(*otherCollider, physicsBody->GetVelocity(), deltaTime));
 					}
@@ -312,6 +380,21 @@ void Sage::Tick(float deltaTime)
 				}
 			}
 		}
+	}
+
+	// Update gizmo lines
+	for (auto it = gizmoLines.begin(); it != gizmoLines.end();)
+	{
+		if (it->remainingTime > 0)
+		{
+			it->remainingTime -= deltaTime;
+			if (it->remainingTime <= 0)
+			{
+				it = gizmoLines.erase(it);
+				continue;
+			}
+		}
+		++it;
 	}
 }
 

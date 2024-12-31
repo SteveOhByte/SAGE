@@ -1,7 +1,5 @@
 ﻿#include "PlayerMovement.h"
 
-#include "../Engine/Gizmos.h"
-
 void PlayerMovement::Start()
 {
 	transform = gameObject->GetComponent<Transform>();
@@ -21,11 +19,6 @@ void PlayerMovement::Tick(float deltaTime, Vector2 mousePos)
 	playerAnimator->SetMovingDown(movingDown);
 	playerAnimator->SetMovingLeft(movingLeft);
 	playerAnimator->SetMovingRight(movingRight);
-
-	// Debug test
-	Gizmos::Begin();
-	Gizmos::DrawLine(transform->GetPosition(), Vector2(transform->GetPosition().x + 100, transform->GetPosition().y), DirectX::Colors::Red);
-	Gizmos::End();
 }
 
 void PlayerMovement::OnKeyDown(UINT keyCode)

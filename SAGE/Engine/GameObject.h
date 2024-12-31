@@ -3,7 +3,7 @@
 #include <string>
 #include <vector>
 
-#include "Component.h"
+#include "Components/Component.h"
 
 class Sage;
 enum class ComponentType;
@@ -85,6 +85,8 @@ public:
 	std::string name;
 	std::vector<std::unique_ptr<Component>> components;
 
+	float2 referenceResolution = float2(-1, -1);
+	
 	Sage* sage;
 private:
 	bool isActive = true;

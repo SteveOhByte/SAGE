@@ -3,15 +3,15 @@
 #include <unordered_set>
 #include <vector>
 
-#include "DirectX.h"
+#include "Graphics/DirectX.h"
 #include "SageMath.h"
-#include "Font.h"
-#include "Sprite.h"
+#include "Graphics/Font.h"
+#include "Components/Sprite.h"
 #include <windows.h>
 
-#include "IColliderListener.h"
-#include "IKeyboardListener.h"
-#include "IMouseListener.h"
+#include "Utilities/IColliderListener.h"
+#include "Utilities/IKeyboardListener.h"
+#include "Utilities/IMouseListener.h"
 #include "Scene.h"
 
 namespace DirectX {
@@ -52,15 +52,14 @@ public:
 	void Unpause();
 	bool IsPaused() const { return isGamePaused; }
 
-	// Get the centre of the screen
-	static int GetCentreX() { return GetScreenWidth() * 0.5f; }
-	static int GetCentreY() { return GetScreenHeight() * 0.5f; }
-
-	// Get the screen width and height
-	static int GetScreenWidth() { return 1920; }
-	static int GetScreenHeight() { return 1080; }
-
 	ID3D11Device* GetDevice() const { return GetD3DDevice(); }
+
+	void SetGizmoText(const std::wstring& text) { gizmoText = text; }
+	void SetGizmoColour(const DirectX::XMVECTORF32& colour) { gizmoColour = colour; }
+	void AddGizmoLine(const Vector2& start, const Vector2& end, const DirectX::XMVECTORF32& colour, float duration, float thickness)
+	{
+		gizmoLines.push_back({start, end, colour, duration, thickness});
+	}
 
 private:
 	std::vector<std::unique_ptr<Scene>> scenes;
@@ -76,6 +75,18 @@ private:
 
 	FontType harmoniaFont;
 	SpriteBatch* spriteBatch;
+
+	wstring gizmoText;
+	DirectX::XMVECTORF32 gizmoColour;
+
+	struct GizmoLine {
+		Vector2 start;
+		Vector2 end;
+		DirectX::XMVECTORF32 colour;
+		float remainingTime;
+		float thickness;
+	};
+	std::vector<GizmoLine> gizmoLines;
 
 	Vector2 mousePos;
 	bool leftButtonDown;
