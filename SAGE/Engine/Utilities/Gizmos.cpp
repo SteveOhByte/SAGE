@@ -1,13 +1,22 @@
 ﻿#include "Gizmos.h"
 
+#include <codecvt>
+#include <locale>
+
 #include "../Sage.h"
 
 Sage* Gizmos::sage = nullptr;
 
-void Gizmos::WriteText(const std::wstring& text, const DirectX::XMVECTORF32& colour, float size, float thickness)
+void Gizmos::WriteLine(const std::wstring& text, const DirectX::XMVECTORF32& colour)
 {
-	sage->SetGizmoText(text);
-	sage->SetGizmoColour(colour);
+	sage->WriteLine(text, colour);
+}
+
+void Gizmos::WriteLine(const std::string& text, const DirectX::XMVECTORF32& colour)
+{
+	std::wstring_convert<std::codecvt_utf8<wchar_t>> converter;
+	std::wstring wideText = converter.from_bytes(text);
+	sage->WriteLine(wideText, colour);
 }
 
 void Gizmos::DrawLine(const Vector2& start, const Vector2& end, const DirectX::XMVECTORF32& colour, float duration, float thickness)

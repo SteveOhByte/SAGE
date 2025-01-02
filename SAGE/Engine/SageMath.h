@@ -32,6 +32,8 @@ public:
 	static float Min(float a, float b);
 	static float Max(float a, float b);
 
+	static DirectX::SimpleMath::Vector2 NormalizeVector(const DirectX::SimpleMath::Vector2& vector);
+
 	static float PI;
 	static float TWO_PI;
 };

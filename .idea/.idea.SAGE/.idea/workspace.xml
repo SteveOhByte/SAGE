@@ -8,18 +8,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ae2816ed-447d-41d5-9648-f9f1b26dd893" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/SAGE/Zombies/ZombieAnimator.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SAGE/Zombies/ZombieAnimator.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SAGE/Zombies/ZombieController.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SAGE/Zombies/ZombieController.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SAGE/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SAGE/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Debug/SAGE.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Debug/SAGE.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SAGE/Debug/Gunslinger.tlog/CL.command.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/SAGE/Debug/Gunslinger.tlog/CL.command.1.tlog" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SAGE/Debug/Gunslinger.tlog/CL.read.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/SAGE/Debug/Gunslinger.tlog/CL.read.1.tlog" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SAGE/Debug/Gunslinger.tlog/CL.write.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/SAGE/Debug/Gunslinger.tlog/CL.write.1.tlog" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SAGE/Debug/SAGE.exe.recipe" beforeDir="false" afterPath="$PROJECT_DIR$/SAGE/Debug/SAGE.exe.recipe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SAGE/Debug/SAGE.ilk" beforeDir="false" afterPath="$PROJECT_DIR$/SAGE/Debug/SAGE.ilk" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SAGE/Debug/SAGE.tlog/CL.command.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/SAGE/Debug/SAGE.tlog/CL.command.1.tlog" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SAGE/Debug/SAGE.tlog/CL.read.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/SAGE/Debug/SAGE.tlog/CL.read.1.tlog" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SAGE/Debug/SAGE.tlog/CL.write.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/SAGE/Debug/SAGE.tlog/CL.write.1.tlog" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SAGE/Debug/SAGE.tlog/Cl.items.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/SAGE/Debug/SAGE.tlog/Cl.items.tlog" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SAGE/Debug/SAGE.tlog/SAGE.lastbuildstate" beforeDir="false" afterPath="$PROJECT_DIR$/SAGE/Debug/SAGE.tlog/SAGE.lastbuildstate" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SAGE/Debug/SAGE.tlog/link.command.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/SAGE/Debug/SAGE.tlog/link.command.1.tlog" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SAGE/Debug/SAGE.tlog/link.read.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/SAGE/Debug/SAGE.tlog/link.read.1.tlog" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SAGE/Debug/SAGE.tlog/link.secondary.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/SAGE/Debug/SAGE.tlog/link.secondary.1.tlog" afterDir="false" />
@@ -28,13 +30,16 @@
       <change beforePath="$PROJECT_DIR$/SAGE/Debug/vc143.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/SAGE/Debug/vc143.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SAGE/Engine/Components/Collider.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/SAGE/Engine/Components/Collider.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SAGE/Engine/Components/Collider.h" beforeDir="false" afterPath="$PROJECT_DIR$/SAGE/Engine/Components/Collider.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SAGE/Engine/GameObject.h" beforeDir="false" afterPath="$PROJECT_DIR$/SAGE/Engine/GameObject.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SAGE/Engine/Sage.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/SAGE/Engine/Sage.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SAGE/Engine/Sage.h" beforeDir="false" afterPath="$PROJECT_DIR$/SAGE/Engine/Sage.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SAGE/Engine/SageMath.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/SAGE/Engine/SageMath.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SAGE/Engine/SageMath.h" beforeDir="false" afterPath="$PROJECT_DIR$/SAGE/Engine/SageMath.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SAGE/Engine/Utilities/Gizmos.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/SAGE/Engine/Utilities/Gizmos.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SAGE/Engine/Utilities/Gizmos.h" beforeDir="false" afterPath="$PROJECT_DIR$/SAGE/Engine/Utilities/Gizmos.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SAGE/SAGE.vcxproj" beforeDir="false" afterPath="$PROJECT_DIR$/SAGE/SAGE.vcxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SAGE/Zombies/PlayerInventory.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/SAGE/Zombies/PlayerInventory.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SAGE/Zombies/Scenes/GameScene.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/SAGE/Zombies/Scenes/GameScene.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SAGE/Zombies/Scenes/MainMenuScene.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/SAGE/Zombies/Scenes/MainMenuScene.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,26 +74,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "C++ Project.SAGE.executor": "Run",
-    "C/C++ Project.SAGE.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/smerr/Desktop/SAGE-master/SAGE/Engine/Components",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;C++ Project.SAGE.executor&quot;: &quot;Run&quot;,
+    &quot;C/C++ Project.SAGE.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/smerr/Desktop/SAGE-master/SAGE/Engine/Components&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="SAGE" type="CppProject" factoryName="C++ Project">
       <configuration_1 setup="1">
@@ -135,6 +140,7 @@
       <workItem from="1735654968130" duration="3619000" />
       <workItem from="1735659055306" duration="11403000" />
       <workItem from="1735786864847" duration="3204000" />
+      <workItem from="1735829469699" duration="9541000" />
     </task>
     <servers />
   </component>

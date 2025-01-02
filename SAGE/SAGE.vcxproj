@@ -1168,6 +1168,8 @@
       <SDLCheck>true</SDLCheck>
       <LinkCompiled>true</LinkCompiled>
     </ClCompile>
+    <ClCompile Include="Zombies\ZombieAnimator.cpp" />
+    <ClCompile Include="Zombies\ZombieController.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine\Components\AnimatedSprite.h" />
@@ -1197,6 +1199,8 @@
     <ClInclude Include="Zombies\PlayerMovement.h" />
     <ClInclude Include="Zombies\Scenes\GameScene.h" />
     <ClInclude Include="Zombies\Scenes\MainMenuScene.h" />
+    <ClInclude Include="Zombies\ZombieAnimator.h" />
+    <ClInclude Include="Zombies\ZombieController.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

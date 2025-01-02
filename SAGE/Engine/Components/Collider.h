@@ -63,6 +63,7 @@ struct CollisionResult
 	bool collision;
 	float2 collisionPoint;
 	float2 normal;
+	float penetrationDepth;
 };
 
 enum ColliderType

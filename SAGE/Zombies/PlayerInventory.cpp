@@ -20,12 +20,16 @@ void PlayerInventory::Start()
 		bulletSprite->Initialize(gameScene->device, L"Game\\bullet.png", DirectX::Colors::White.v, 1);
 
 		const auto bulletCollider = new Collider(CIRCLE);
+		bulletCollider->DrawCollider(true);
+		bulletCollider->SetTrigger(true);
 		const auto bulletPhysics = new PhysicsBody(Vector2(0, 0), 1, 0.1f, 0.0f);
 		
 		bullets[i]->AddComponent(bulletTransform);
 		bullets[i]->AddComponent(bulletSprite);
 		bullets[i]->AddComponent(bulletCollider);
 		bullets[i]->AddComponent(bulletPhysics);
+
+		bullets[i]->AddTag("Bullet");
 
 		bullets[i]->SetActive(false);
 	}

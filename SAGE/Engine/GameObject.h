@@ -40,6 +40,19 @@ public:
 		                 components.end());
 	}
 
+	// HasComponent method:
+	template <typename T>
+	bool HasComponent() const
+	{
+		for (const auto& pComponent : components)
+		{
+			T* casted = dynamic_cast<T*>(pComponent.get());
+			if (casted != nullptr)
+				return true;
+		}
+		return false;
+	}
+
 	template <typename T>
 	T* GetComponent() const
 	{
@@ -85,6 +98,11 @@ public:
 	std::string name;
 	std::vector<std::unique_ptr<Component>> components;
 
+	std::vector<std::string> GetTags() const { return tags; }
+	void AddTag(const std::string& tag) { tags.push_back(tag); }
+	void RemoveTag(const std::string& tag) { tags.erase(std::remove(tags.begin(), tags.end(), tag), tags.end()); }
+	bool HasTag(const std::string& tag) const { return std::find(tags.begin(), tags.end(), tag) != tags.end(); }
+	
 	float2 referenceResolution = float2(-1, -1);
 	
 	Sage* sage;
@@ -92,6 +110,7 @@ private:
 	bool isActive = true;
 	bool isRendered = true;
 	unsigned long long uid;
+	std::vector<std::string> tags;
 
 	bool IsUniqueId(unsigned long long newId, const std::vector<GameObject*>& gameObjects);
 };

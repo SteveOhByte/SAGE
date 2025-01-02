@@ -1,5 +1,6 @@
 #ifndef _ENGINE_H
 #define ENGINE_H
+#include <deque>
 #include <unordered_set>
 #include <vector>
 
@@ -13,6 +14,13 @@
 #include "Utilities/IKeyboardListener.h"
 #include "Utilities/IMouseListener.h"
 #include "Scene.h"
+#include "Components/Collider.h"
+
+struct CollisionPair {
+	GameObject* objectA;
+	GameObject* objectB;
+	CollisionResult result;
+};
 
 namespace DirectX {
 	class SpriteBatch;
@@ -54,8 +62,7 @@ public:
 
 	ID3D11Device* GetDevice() const { return GetD3DDevice(); }
 
-	void SetGizmoText(const std::wstring& text) { gizmoText = text; }
-	void SetGizmoColour(const DirectX::XMVECTORF32& colour) { gizmoColour = colour; }
+	void WriteLine(const std::wstring& text, const DirectX::XMVECTORF32& color);
 	void AddGizmoLine(const Vector2& start, const Vector2& end, const DirectX::XMVECTORF32& colour, float duration, float thickness)
 	{
 		gizmoLines.push_back({start, end, colour, duration, thickness});
@@ -87,6 +94,20 @@ private:
 		float thickness;
 	};
 	std::vector<GizmoLine> gizmoLines;
+
+	struct GizmoTextLine {
+		std::wstring text;
+		DirectX::XMVECTORF32 color;
+		float remainingTime;
+		static constexpr float FADE_TIME = 5.0f;  // Time in seconds before fading starts
+		static constexpr float FADE_DURATION = 1.0f;  // How long the fade out takes
+	};
+	static const size_t MAX_TEXT_LINES = 7;
+	deque<GizmoTextLine> gizmoTextLines;
+
+	std::vector<CollisionPair> DetectCollisions();
+	void HandlePhysicsCollision(const CollisionPair& pair, float deltaTime);
+	void HandleTriggerCollision(const CollisionPair& pair);
 
 	Vector2 mousePos;
 	bool leftButtonDown;

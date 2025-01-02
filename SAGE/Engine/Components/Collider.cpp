@@ -100,6 +100,7 @@ CollisionResult Collider::RectRectCheck(const Rect& rectA, const Rect& rectB)
 {
 	CollisionResult result;
 	result.collision = false;
+	result.penetrationDepth = 0.0f;
     
 	float2 delta = rectA.centre - rectB.centre;
 	delta.x = fabsf(delta.x);
@@ -111,6 +112,8 @@ CollisionResult Collider::RectRectCheck(const Rect& rectA, const Rect& rectB)
 	// Check if there is an overlap on both axes
 	if (overlapX > 0 && overlapY > 0) {
 		result.collision = true;
+
+		result.penetrationDepth = SageMath::Min(overlapX, overlapY);
         
 		// Determine the axis of least penetration
 		if (overlapX < overlapY) {
@@ -135,26 +138,26 @@ CollisionResult Collider::RectCircleCheck(const Rect& rect, const Circle& circle
 {
 	CollisionResult result;
 	result.collision = false;
+	result.penetrationDepth = 0.0f;
 
-	// Calculate the distance from the circle's centre to the box's center
 	const float2 centreDistance = circle.centre - rect.centre;
-
 	const float2 clampedDistance = Clamp(centreDistance, -rect.extents, rect.extents);
-
-	// Closest point on the box to the circle's centre
 	const float2 closestPoint = rect.centre + clampedDistance;
-
-	// Vector from the closest point to the circle's centre
 	float2 vectorToCircle = circle.centre - closestPoint;
+	const float distanceSquared = vectorToCircle.LengthSquared();
+	const float radiusSquared = circle.radius * circle.radius;
 
-	if (vectorToCircle.LengthSquared() < circle.radius * circle.radius)
+	if (distanceSquared < radiusSquared)
 	{
 		result.collision = true;
-		// Collision point is the closest point on the box to the circle
 		result.collisionPoint = closestPoint;
+        
+		const float distance = sqrtf(distanceSquared);
+		// Penetration depth is how far the circle overlaps into the rectangle
+		result.penetrationDepth = circle.radius - distance;
+        
 		// Calculate the normal at the collision point
-		vectorToCircle.Normalize();
-		result.normal = vectorToCircle;
+		result.normal = distance > 0.0f ? vectorToCircle / distance : float2(1, 0);
 	}
 
 	return result;
@@ -164,6 +167,7 @@ CollisionResult Collider::CircleCircleCheck(const Circle& circleA, const Circle&
 {
 	CollisionResult result;
 	result.collision = false;
+	result.penetrationDepth = 0.0f;
 
 	const float2 centreDelta = circleB.centre - circleA.centre;
 	const float distance = centreDelta.Length();
@@ -171,6 +175,8 @@ CollisionResult Collider::CircleCircleCheck(const Circle& circleA, const Circle&
     
 	if (distance <= radiusSum) {
 		result.collision = true;
+		result.penetrationDepth = radiusSum - distance;
+		
 		// Normal is the normalized vector from circleA to circleB
 		const float2 normal = centreDelta / distance;
 		result.normal = normal;

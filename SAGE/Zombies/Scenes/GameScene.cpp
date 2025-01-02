@@ -5,9 +5,9 @@
 #include "../GameManager.h"
 #include "../PlayerInventory.h"
 #include "../PlayerMovement.h"
+#include "../ZombieController.h"
 #include "../../Engine/Components/AnimatedSprite.h"
 #include "../../Engine/Components/Button.h"
-#include "../../Engine/Components/Collider.h"
 #include "../../Engine/Sage.h"
 
 void GameScene::Initialize(ID3D11Device* device)
@@ -30,7 +30,7 @@ void GameScene::Initialize(ID3D11Device* device)
 	const auto playerTransform = new Transform(Vector2(Screen::GetCentreX(), Screen::GetCentreY()), 0, 0.25f);
 	const auto playerSprite = new AnimatedSprite();
 	const auto playerCollider = new Collider(CIRCLE);
-	playerCollider->SetCircle(Circle(playerTransform->position, REF(30)));
+	playerCollider->SetCircle(Circle(playerTransform->position, REF(20)));
 	playerCollider->DrawCollider(true);
 	playerSprite->Initialize(device, DirectX::Colors::White.v, 0);
 	playerSprite->RegisterAnimationState("KnifeIdle", 289, 224, 15, L"Game\\Player\\Knife\\idle.png");
@@ -60,13 +60,21 @@ void GameScene::Initialize(ID3D11Device* device)
 	zombieGameObject = std::make_unique<GameObject>("Zombie");
 	const auto zombieTransform = new Transform(Vector2(Screen::GetCentreX() + REF(400), Screen::GetCentreY()), 0, 0.25f);
 	const auto zombieSprite = new AnimatedSprite();
+	const auto zombieCollider = new Collider(CIRCLE);
+	zombieCollider->SetCircle(Circle(zombieTransform->position, REF(20)));
+	zombieCollider->DrawCollider(true);
 	zombieSprite->Initialize(device, DirectX::Colors::White.v, 1);
 	zombieSprite->RegisterAnimationState("Idle", 243, 224, 15, L"Game\\Zombie\\zombieIdle.png");
 	zombieSprite->RegisterAnimationState("Move", 290, 313, 15, L"Game\\Zombie\\zombieMove.png");
 	zombieSprite->RegisterAnimationState("Attack", 318, 294, 15, L"Game\\Zombie\\zombieAttack.png");
 	zombieSprite->SetAnimationState("Move");
+	const auto zombieController = new ZombieController();
+	const auto zombieAnimator = new ZombieAnimator();
 	zombieGameObject->AddComponent(zombieTransform);
+	zombieGameObject->AddComponent(zombieCollider);
 	zombieGameObject->AddComponent(zombieSprite);
+	zombieGameObject->AddComponent(zombieController);
+	zombieGameObject->AddComponent(zombieAnimator);
 
 	pauseTitleGameObject = std::make_unique<GameObject>("Pause Title");
 	const auto pauseTitleTransform = new Transform(Vector2(Screen::GetCentreX(), REF(150)), 0, 1);
@@ -101,7 +109,7 @@ void GameScene::Initialize(ID3D11Device* device)
 	bottomLeftBuildingsGameObject = std::make_unique<GameObject>("Bottom Left Buildings");
 	const auto bottomLeftBuildingsTransform = new Transform(Vector2(REF(320), REF(867)), 0, 1);
 	const auto bottomLeftBuildingsCollider = new Collider(RECTANGLE);
-	bottomLeftBuildingsCollider->SetSquare(Rect(bottomLeftBuildingsTransform->position, Vector2(653, 428)));
+	bottomLeftBuildingsCollider->SetSquare(Rect(bottomLeftBuildingsTransform->position, Vector2(REF(450), REF(228))));
 	bottomLeftBuildingsCollider->DrawCollider(true);
 	bottomLeftBuildingsGameObject->AddComponent(bottomLeftBuildingsTransform);
 	bottomLeftBuildingsGameObject->AddComponent(bottomLeftBuildingsCollider);

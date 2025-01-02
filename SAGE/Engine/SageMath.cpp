@@ -48,3 +48,12 @@ float SageMath::Max(float a, float b)
 {
 	return a > b ? a : b;
 }
+
+DirectX::SimpleMath::Vector2 SageMath::NormalizeVector(const DirectX::SimpleMath::Vector2& vector)
+{
+	const float length = vector.Length();
+	if (length == 0.0f)
+		return DirectX::SimpleMath::Vector2::Zero;
+	else
+		return vector / length;
+}
