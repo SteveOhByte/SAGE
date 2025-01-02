@@ -360,6 +360,11 @@ void Sage::Tick(float deltaTime)
 		Collider* collider = gameObject->GetComponent<Collider>();
 		if (collider != nullptr)
 		{
+			// Update collider position
+			Transform* transform = gameObject->GetComponent<Transform>();
+			if (transform != nullptr)
+				collider->UpdatePosition(transform->GetPosition());
+			
 			if (collider->IsTrigger())
 			{
 				for (const auto otherGameObject : GetActiveScene()->gameObjects)
@@ -393,6 +398,11 @@ void Sage::Tick(float deltaTime)
 				it = gizmoLines.erase(it);
 				continue;
 			}
+		}
+		else if (it->remainingTime <= 0)
+		{
+			it = gizmoLines.erase(it);
+			continue;
 		}
 		++it;
 	}

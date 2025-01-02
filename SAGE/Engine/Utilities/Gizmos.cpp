@@ -22,3 +22,27 @@ void Gizmos::DrawBox(const Box& box, const DirectX::XMVECTORF32& colour, float d
 	sage->AddGizmoLine(box.bottomRight, box.bottomLeft, colour, duration, thickness);
 	sage->AddGizmoLine(box.bottomLeft, box.topLeft, colour, duration, thickness);
 }
+
+void Gizmos::DrawRing(const Ring& ring, const DirectX::XMVECTORF32& colour, float duration, float thickness)
+{
+	const float2 centre = ring.centre;
+	const float radius = ring.radius;
+
+	const int numSegments = 32;
+
+	std::vector<Vector2> points(numSegments);
+
+	for (int i = 0; i < numSegments; ++i)
+	{
+		float angle = (static_cast<float>(i) / numSegments) * 360.0f;
+		float radians = SageMath::DegToRad(angle);
+		points[i].x = centre.x + radius * cosf(radians);
+		points[i].y = centre.y + radius * sinf(radians);
+	}
+
+	for (int i = 0; i < numSegments; ++i)
+	{
+		int nextIndex = (i + 1) % numSegments;
+		sage->AddGizmoLine(points[i], points[nextIndex], colour, duration, thickness);
+	}
+}

@@ -29,6 +29,9 @@ void GameScene::Initialize(ID3D11Device* device)
 	playerGameObject = std::make_unique<GameObject>("Player");
 	const auto playerTransform = new Transform(Vector2(Screen::GetCentreX(), Screen::GetCentreY()), 0, 0.25f);
 	const auto playerSprite = new AnimatedSprite();
+	const auto playerCollider = new Collider(CIRCLE);
+	playerCollider->SetCircle(Circle(playerTransform->position, REF(30)));
+	playerCollider->DrawCollider(true);
 	playerSprite->Initialize(device, DirectX::Colors::White.v, 0);
 	playerSprite->RegisterAnimationState("KnifeIdle", 289, 224, 15, L"Game\\Player\\Knife\\idle.png");
 	playerSprite->RegisterAnimationState("KnifeAttack", 329, 393, 15, L"Game\\Player\\Knife\\meleeAttack.png");
@@ -48,6 +51,7 @@ void GameScene::Initialize(ID3D11Device* device)
 	const auto playerInventory = new PlayerInventory(this);
 	const auto playerAnimator = new PlayerAnimator();
 	playerGameObject->AddComponent(playerTransform);
+	playerGameObject->AddComponent(playerCollider);
 	playerGameObject->AddComponent(playerSprite);
 	playerGameObject->AddComponent(playerMovement);
 	playerGameObject->AddComponent(playerInventory);

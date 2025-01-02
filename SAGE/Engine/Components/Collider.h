@@ -107,6 +107,8 @@ public:
 	
 	float2 Clamp(float2 value, float2 min, float2 max);
 
+	void UpdatePosition(const float2& newPosition);
+	
 	bool IsTrigger() const { return isTrigger; }
 	void SetTrigger(bool isTrigger) { this->isTrigger = isTrigger; }
 

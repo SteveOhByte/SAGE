@@ -9,7 +9,7 @@
 void MainMenuScene::Initialize(ID3D11Device* device)
 {
 	SetReferenceResolution(1920, 1080);
-	
+
 	backgroundGameObject = std::make_unique<GameObject>("Background");
 	const auto backgroundTransform = new Transform(Vector2(Screen::GetCentreX(), Screen::GetCentreY()), 0, 1);
 	const auto backgroundSprite = new Sprite();

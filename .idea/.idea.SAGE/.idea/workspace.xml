@@ -7,7 +7,35 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ae2816ed-447d-41d5-9648-f9f1b26dd893" name="Changes" comment="" />
+    <list default="true" id="ae2816ed-447d-41d5-9648-f9f1b26dd893" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.SAGE/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SAGE/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Debug/SAGE.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Debug/SAGE.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SAGE/Debug/Gunslinger.tlog/CL.command.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/SAGE/Debug/Gunslinger.tlog/CL.command.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SAGE/Debug/Gunslinger.tlog/CL.read.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/SAGE/Debug/Gunslinger.tlog/CL.read.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SAGE/Debug/Gunslinger.tlog/CL.write.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/SAGE/Debug/Gunslinger.tlog/CL.write.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SAGE/Debug/SAGE.exe.recipe" beforeDir="false" afterPath="$PROJECT_DIR$/SAGE/Debug/SAGE.exe.recipe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SAGE/Debug/SAGE.ilk" beforeDir="false" afterPath="$PROJECT_DIR$/SAGE/Debug/SAGE.ilk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SAGE/Debug/SAGE.tlog/CL.command.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/SAGE/Debug/SAGE.tlog/CL.command.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SAGE/Debug/SAGE.tlog/CL.read.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/SAGE/Debug/SAGE.tlog/CL.read.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SAGE/Debug/SAGE.tlog/CL.write.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/SAGE/Debug/SAGE.tlog/CL.write.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SAGE/Debug/SAGE.tlog/Cl.items.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/SAGE/Debug/SAGE.tlog/Cl.items.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SAGE/Debug/SAGE.tlog/SAGE.lastbuildstate" beforeDir="false" afterPath="$PROJECT_DIR$/SAGE/Debug/SAGE.tlog/SAGE.lastbuildstate" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SAGE/Debug/SAGE.tlog/link.command.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/SAGE/Debug/SAGE.tlog/link.command.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SAGE/Debug/SAGE.tlog/link.read.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/SAGE/Debug/SAGE.tlog/link.read.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SAGE/Debug/SAGE.tlog/link.secondary.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/SAGE/Debug/SAGE.tlog/link.secondary.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SAGE/Debug/SAGE.tlog/link.write.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/SAGE/Debug/SAGE.tlog/link.write.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SAGE/Debug/vc143.idb" beforeDir="false" afterPath="$PROJECT_DIR$/SAGE/Debug/vc143.idb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SAGE/Debug/vc143.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/SAGE/Debug/vc143.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SAGE/Engine/Components/Collider.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/SAGE/Engine/Components/Collider.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SAGE/Engine/Components/Collider.h" beforeDir="false" afterPath="$PROJECT_DIR$/SAGE/Engine/Components/Collider.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SAGE/Engine/Sage.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/SAGE/Engine/Sage.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SAGE/Engine/SageMath.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/SAGE/Engine/SageMath.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SAGE/Engine/SageMath.h" beforeDir="false" afterPath="$PROJECT_DIR$/SAGE/Engine/SageMath.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SAGE/Engine/Utilities/Gizmos.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/SAGE/Engine/Utilities/Gizmos.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SAGE/Engine/Utilities/Gizmos.h" beforeDir="false" afterPath="$PROJECT_DIR$/SAGE/Engine/Utilities/Gizmos.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SAGE/Zombies/Scenes/GameScene.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/SAGE/Zombies/Scenes/GameScene.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SAGE/Zombies/Scenes/MainMenuScene.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/SAGE/Zombies/Scenes/MainMenuScene.cpp" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,6 +48,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="cidr-memory-view://0" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/shared/windef.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/d3d10shader.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../Program Files/DirectXTK/Inc/SimpleMath.h" root0="SKIP_HIGHLIGHTING" />
@@ -47,6 +76,7 @@
     "C/C++ Project.SAGE.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
     "last_opened_file_path": "C:/Users/smerr/Desktop/SAGE-master/SAGE/Engine/Components",
@@ -104,6 +134,7 @@
       <workItem from="1712161186025" duration="21000" />
       <workItem from="1735654968130" duration="3619000" />
       <workItem from="1735659055306" duration="11403000" />
+      <workItem from="1735786864847" duration="3204000" />
     </task>
     <servers />
   </component>

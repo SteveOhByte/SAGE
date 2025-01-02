@@ -191,18 +191,39 @@ float2 Collider::Clamp(const float2 value, const float2 min, const float2 max)
 	return clamped;
 }
 
+void Collider::UpdatePosition(const float2& newPosition)
+{
+	// Update the position based on the collider type
+	switch (type)
+	{
+		case RECTANGLE:
+			square.centre = newPosition;
+			break;
+		case CIRCLE:
+			circle.centre = newPosition;
+			break;
+	}
+}
+
 void Collider::Draw()
 {
 	if (!drawCollider) return;
 
 	if (type == RECTANGLE)
 	{
-		Box squareGizmo = Box();
+		Box squareGizmo;
 		squareGizmo.topLeft = Vector2(square.centre.x - square.extents.x, square.centre.y - square.extents.y);
 		squareGizmo.topRight = Vector2(square.centre.x + square.extents.x, square.centre.y - square.extents.y);
 		squareGizmo.bottomLeft = Vector2(square.centre.x - square.extents.x, square.centre.y + square.extents.y);
 		squareGizmo.bottomRight = Vector2(square.centre.x + square.extents.x, square.centre.y + square.extents.y);
 		Gizmos::DrawBox(squareGizmo, DirectX::Colors::LimeGreen, 0.0f, 1.0f);
+	}
+	else if (type == CIRCLE)
+	{
+		Ring ringGizmo;
+		ringGizmo.centre = circle.centre;
+		ringGizmo.radius = circle.radius;
+		Gizmos::DrawRing(ringGizmo, DirectX::Colors::LimeGreen, 0.0f, 1.0f);
 	}
 }
 

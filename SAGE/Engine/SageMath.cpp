@@ -1,5 +1,7 @@
 ﻿#include "SageMath.h"
 
+float SageMath::PI = 3.141592653589793f;
+
 float SageMath::Clamp(const float value, const float min, const float max) 
 {
 	return value < min ? min : (value > max ? max : value);
@@ -25,4 +27,24 @@ float SageMath::LerpAngle(float startAngle, float endAngle, float t)
 
 float SageMath::Lerp(float start, float end, float time) {
 	return start + (end - start) * Clamp(time, 0.0f, 1.0f);
+}
+
+float SageMath::DegToRad(float degrees)
+{
+	return degrees * PI / 180.0f;
+}
+
+float SageMath::RadToDeg(float radians)
+{
+	return radians * 180.0f / PI;
+}
+
+float SageMath::Min(float a, float b)
+{
+	return a < b ? a : b;
+}
+
+float SageMath::Max(float a, float b)
+{
+	return a > b ? a : b;
 }

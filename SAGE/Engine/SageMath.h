@@ -13,10 +13,25 @@ struct Box
 	float2 bottomRight;
 };
 
+struct Ring
+{
+	float2 centre;
+	float radius;
+};
+
 class SageMath
 {
 public:
 	static float Clamp(float value, float min, float max);
 	static float LerpAngle(float currentAngle, float targetAngle, float time);
 	static float Lerp(float start, float end, float time);
+
+	static float DegToRad(float degrees);
+	static float RadToDeg(float radians);
+
+	static float Min(float a, float b);
+	static float Max(float a, float b);
+
+	static float PI;
+	static float TWO_PI;
 };
