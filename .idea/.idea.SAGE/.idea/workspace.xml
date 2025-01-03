@@ -8,12 +8,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ae2816ed-447d-41d5-9648-f9f1b26dd893" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/SAGE/Zombies/ZombieAnimator.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SAGE/Zombies/ZombieAnimator.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SAGE/Zombies/ZombieController.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SAGE/Zombies/ZombieController.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SAGE/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SAGE/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Debug/SAGE.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Debug/SAGE.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SAGE.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/SAGE.sln.DotSettings.user" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SAGE/Debug/Gunslinger.tlog/CL.command.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/SAGE/Debug/Gunslinger.tlog/CL.command.1.tlog" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SAGE/Debug/Gunslinger.tlog/CL.read.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/SAGE/Debug/Gunslinger.tlog/CL.read.1.tlog" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SAGE/Debug/Gunslinger.tlog/CL.write.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/SAGE/Debug/Gunslinger.tlog/CL.write.1.tlog" afterDir="false" />
@@ -21,25 +17,15 @@
       <change beforePath="$PROJECT_DIR$/SAGE/Debug/SAGE.tlog/CL.command.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/SAGE/Debug/SAGE.tlog/CL.command.1.tlog" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SAGE/Debug/SAGE.tlog/CL.read.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/SAGE/Debug/SAGE.tlog/CL.read.1.tlog" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SAGE/Debug/SAGE.tlog/CL.write.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/SAGE/Debug/SAGE.tlog/CL.write.1.tlog" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SAGE/Debug/SAGE.tlog/Cl.items.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/SAGE/Debug/SAGE.tlog/Cl.items.tlog" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SAGE/Debug/SAGE.tlog/link.command.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/SAGE/Debug/SAGE.tlog/link.command.1.tlog" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SAGE/Debug/SAGE.tlog/link.read.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/SAGE/Debug/SAGE.tlog/link.read.1.tlog" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SAGE/Debug/SAGE.tlog/link.secondary.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/SAGE/Debug/SAGE.tlog/link.secondary.1.tlog" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SAGE/Debug/SAGE.tlog/link.write.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/SAGE/Debug/SAGE.tlog/link.write.1.tlog" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SAGE/Debug/vc143.idb" beforeDir="false" afterPath="$PROJECT_DIR$/SAGE/Debug/vc143.idb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SAGE/Debug/vc143.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/SAGE/Debug/vc143.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SAGE/Engine/Components/Collider.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/SAGE/Engine/Components/Collider.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SAGE/Engine/Components/Collider.h" beforeDir="false" afterPath="$PROJECT_DIR$/SAGE/Engine/Components/Collider.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SAGE/Engine/GameObject.h" beforeDir="false" afterPath="$PROJECT_DIR$/SAGE/Engine/GameObject.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SAGE/Engine/Sage.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/SAGE/Engine/Sage.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SAGE/Engine/Sage.h" beforeDir="false" afterPath="$PROJECT_DIR$/SAGE/Engine/Sage.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SAGE/Engine/SageMath.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/SAGE/Engine/SageMath.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SAGE/Engine/SageMath.h" beforeDir="false" afterPath="$PROJECT_DIR$/SAGE/Engine/SageMath.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SAGE/Engine/Utilities/Gizmos.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/SAGE/Engine/Utilities/Gizmos.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SAGE/Engine/Utilities/Gizmos.h" beforeDir="false" afterPath="$PROJECT_DIR$/SAGE/Engine/Utilities/Gizmos.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SAGE/SAGE.vcxproj" beforeDir="false" afterPath="$PROJECT_DIR$/SAGE/SAGE.vcxproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SAGE/Zombies/PlayerInventory.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/SAGE/Zombies/PlayerInventory.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SAGE/Zombies/Scenes/GameScene.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/SAGE/Zombies/Scenes/GameScene.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SAGE/Zombies/Scenes/GameScene.h" beforeDir="false" afterPath="$PROJECT_DIR$/SAGE/Zombies/Scenes/GameScene.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,11 +39,12 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="cidr-memory-view://0" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/shared/windef.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/d3d10shader.h" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/debugapi.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../Program Files/DirectXTK/Inc/SimpleMath.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.42.34433/include/memory" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.42.34433/include/sal.h" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -141,6 +128,7 @@
       <workItem from="1735659055306" duration="11403000" />
       <workItem from="1735786864847" duration="3204000" />
       <workItem from="1735829469699" duration="9541000" />
+      <workItem from="1735929785738" duration="905000" />
     </task>
     <servers />
   </component>

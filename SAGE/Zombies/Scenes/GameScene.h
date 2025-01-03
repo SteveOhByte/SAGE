@@ -19,6 +19,7 @@ private:
 	std::unique_ptr<GameObject> gameManagerGameObject;
 	std::unique_ptr<GameObject> playerGameObject;
 	std::unique_ptr<GameObject> zombieGameObject;
+	std::unique_ptr<GameObject> topBorderGameObject;
 
 	std::unique_ptr<GameObject> pauseTitleGameObject;
 	std::unique_ptr<GameObject> resumeButtonGameObject;

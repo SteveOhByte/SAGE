@@ -45,16 +45,13 @@ int WINAPI WinMain(const HINSTANCE hInstance, HINSTANCE, PSTR, const int nShowCm
 
 // Constructor for the application
 Sage::Sage(const HINSTANCE hInstance)
-    : DirectXClass(hInstance), gizmoText(), gizmoColour()
+    : DirectXClass(hInstance)
 {
     mousePos = Vector2(clientWidth * 0.5f, clientHeight * 0.5f);
     spriteBatch = nullptr;
 
     clearColour = Color(Colors::DarkGray.v);
     isGamePaused = false;
-
-    gizmoText = L"";
-    gizmoColour = Colors::Magenta;
 }
 
 // Destructor for the application
@@ -234,12 +231,11 @@ void Sage::Render()
         }
 
         // Create a color with modified alpha
-        DirectX::XMVECTORF32 fadeColor = line.color;
+        DirectX::XMVECTORF32 fadeColor = line.colour;
         fadeColor.f[3] = fadeColor.f[3] * alpha; // Modify the alpha component
 
         harmoniaFont.PrintMessage(75, y, line.text, fadeColor);
     }
-
 
     DirectXClass::UpdateScreenSize();
     deviceContext->VSSetConstantBuffers(0, 1, &screenSizeBuffer);
@@ -470,13 +466,13 @@ std::vector<CollisionPair> Sage::DetectCollisions()
                 
                 // Get detailed collision info
                 if (colliderA->GetType() == RECTANGLE && colliderB->GetType() == RECTANGLE)
-                    pair.result = colliderA->RectRectCheck(colliderA->GetSquare(), colliderB->GetSquare());
+                    pair.result = colliderA->RectRectCheck(colliderA->GetRectangle(), colliderB->GetRectangle());
                 else if (colliderA->GetType() == CIRCLE && colliderB->GetType() == CIRCLE)
                     pair.result = colliderA->CircleCircleCheck(colliderA->GetCircle(), colliderB->GetCircle());
                 else if (colliderA->GetType() == RECTANGLE && colliderB->GetType() == CIRCLE)
-                    pair.result = colliderA->RectCircleCheck(colliderA->GetSquare(), colliderB->GetCircle());
+                    pair.result = colliderA->RectCircleCheck(colliderA->GetRectangle(), colliderB->GetCircle());
                 else if (colliderA->GetType() == CIRCLE && colliderB->GetType() == RECTANGLE)
-                    pair.result = colliderB->RectCircleCheck(colliderB->GetSquare(), colliderA->GetCircle());
+                    pair.result = colliderB->RectCircleCheck(colliderB->GetRectangle(), colliderA->GetCircle());
 
                 if (pair.result.collision)
                     collisions.push_back(pair);

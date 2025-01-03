@@ -40,18 +40,18 @@ struct Circle
 	float radius;
 };
 
-struct Line2D
+struct Line
 {
 	float2 start;
 	float2 end;
 
-	Line2D(const float2 start, const float2 end)
+	Line(const float2 start, const float2 end)
 	{
 		this->start = start;
 		this->end = end;
 	}
 
-	Line2D()
+	Line()
 	{
 		start = float2::Zero;
 		end = float2::Zero;
@@ -87,13 +87,13 @@ public:
 		switch (this->type)
 		{
 			case RECTANGLE:
-				this->square = Rect();
+				this->rectangle = Rect();
 				break;
 			case CIRCLE:
 				this->circle = Circle();
 				break;
 			case LINE:
-				this->line = Line2D();
+				this->line = Line();
 				break;
 		}
 	}
@@ -104,7 +104,7 @@ public:
 	CollisionResult RectRectCheck(const Rect& rectA, const Rect& rectB);
 	CollisionResult CircleCircleCheck(const Circle& circleA, const Circle& circleB);
 	CollisionResult RectCircleCheck(const Rect& rect, const Circle& circle);
-	CollisionResult LineLineCheck(const Line2D& a, const Line2D& b);
+	CollisionResult LineLineCheck(const Line& a, const Line& b);
 	
 	float2 Clamp(float2 value, float2 min, float2 max);
 
@@ -116,11 +116,14 @@ public:
 	ColliderType GetType() const { return type; }
 	void SetType(ColliderType type) { this->type = type; }
 
-	Rect GetSquare() const { return square; }
-	void SetSquare(const Rect& square) { this->square = square; }
+	Rect GetRectangle() const { return rectangle; }
+	void SetRectangle(const Rect& rectangle) { this->rectangle = rectangle; }
 
 	Circle GetCircle() const { return circle; }
 	void SetCircle(const Circle& circle) { this->circle = circle; }
+
+	Line GetLine() const { return line; }
+	void SetLine(const Line& line) { this->line = line; }
 
 	void DrawCollider(bool drawCollider) { this->drawCollider = drawCollider; }
 	void Draw();
@@ -129,9 +132,9 @@ private:
 	bool drawCollider;
 	bool isTrigger;
 	ColliderType type;
-	Rect square;
+	Rect rectangle;
 	Circle circle;
-	Line2D line;
+	Line line;
 };
 
 #endif

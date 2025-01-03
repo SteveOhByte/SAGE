@@ -62,7 +62,6 @@ void GameScene::Initialize(ID3D11Device* device)
 	const auto zombieSprite = new AnimatedSprite();
 	const auto zombieCollider = new Collider(CIRCLE);
 	zombieCollider->SetCircle(Circle(zombieTransform->position, REF(20)));
-	zombieCollider->DrawCollider(true);
 	zombieSprite->Initialize(device, DirectX::Colors::White.v, 1);
 	zombieSprite->RegisterAnimationState("Idle", 243, 224, 15, L"Game\\Zombie\\zombieIdle.png");
 	zombieSprite->RegisterAnimationState("Move", 290, 313, 15, L"Game\\Zombie\\zombieMove.png");
@@ -109,16 +108,24 @@ void GameScene::Initialize(ID3D11Device* device)
 	bottomLeftBuildingsGameObject = std::make_unique<GameObject>("Bottom Left Buildings");
 	const auto bottomLeftBuildingsTransform = new Transform(Vector2(REF(320), REF(867)), 0, 1);
 	const auto bottomLeftBuildingsCollider = new Collider(RECTANGLE);
-	bottomLeftBuildingsCollider->SetSquare(Rect(bottomLeftBuildingsTransform->position, Vector2(REF(450), REF(228))));
-	bottomLeftBuildingsCollider->DrawCollider(true);
+	bottomLeftBuildingsCollider->SetRectangle(Rect(bottomLeftBuildingsTransform->position, Vector2(REF(450), REF(228))));
 	bottomLeftBuildingsGameObject->AddComponent(bottomLeftBuildingsTransform);
 	bottomLeftBuildingsGameObject->AddComponent(bottomLeftBuildingsCollider);
+
+	topBorderGameObject = std::make_unique<GameObject>("Top Border");
+	const auto topBorderTransform = new Transform(Vector2(REF(0), REF(0)), 0, 1);
+	const auto topBorderCollider = new Collider(LINE);
+	topBorderCollider->SetLine(Line(topBorderTransform->position, Vector2(Screen::GetWidth(), REF(0))));
+	topBorderCollider->DrawCollider(true);
+	topBorderGameObject->AddComponent(topBorderTransform);
+	topBorderGameObject->AddComponent(topBorderCollider);
 	
 	AddGameObject(backgroundGameObject.get());
 	AddGameObject(bottomLeftBuildingsGameObject.get());
 	AddGameObject(gameManagerGameObject.get());
 	AddGameObject(playerGameObject.get());
 	AddGameObject(zombieGameObject.get());
+	AddGameObject(topBorderGameObject.get());
 	AddGameObject(pauseTitleGameObject.get());
 	AddGameObject(resumeButtonGameObject.get());
 	AddGameObject(quitButtonGameObject.get());

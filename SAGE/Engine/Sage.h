@@ -65,6 +65,12 @@ public:
 	void WriteLine(const std::wstring& text, const DirectX::XMVECTORF32& color);
 	void AddGizmoLine(const Vector2& start, const Vector2& end, const DirectX::XMVECTORF32& colour, float duration, float thickness)
 	{
+		Gizmos::WriteLine("Attempting to draw a gizmo line from " + std::to_string(start.x) + ", " + std::to_string(start.y) + " to " + std::to_string(end.x) + ", " + std::to_string(end.y));
+		if (start.y <= 0 || start.x <= 0 || end.y >= Screen::GetHeight() || end.x >= Screen::GetWidth())
+		{
+			Gizmos::WriteLine("Gizmo line is outside of the screen - discarding");
+			return;
+		}
 		gizmoLines.push_back({start, end, colour, duration, thickness});
 	}
 
@@ -83,9 +89,6 @@ private:
 	FontType harmoniaFont;
 	SpriteBatch* spriteBatch;
 
-	wstring gizmoText;
-	DirectX::XMVECTORF32 gizmoColour;
-
 	struct GizmoLine {
 		Vector2 start;
 		Vector2 end;
@@ -97,7 +100,7 @@ private:
 
 	struct GizmoTextLine {
 		std::wstring text;
-		DirectX::XMVECTORF32 color;
+		DirectX::XMVECTORF32 colour;
 		float remainingTime;
 		static constexpr float FADE_TIME = 5.0f;  // Time in seconds before fading starts
 		static constexpr float FADE_DURATION = 1.0f;  // How long the fade out takes

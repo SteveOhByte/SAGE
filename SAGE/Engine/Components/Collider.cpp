@@ -10,14 +10,14 @@ bool Collider::CheckCollision(const Collider& other, const float2& newPosition)
 		throw std::invalid_argument("Unsupported collider type for 'other' collider");
 
 	// Adjust position based on the type
-	const float2 adjustedPosition = this->type == RECTANGLE ? this->square.centre + newPosition : this->circle.centre + newPosition;
+	const float2 adjustedPosition = this->type == RECTANGLE ? this->rectangle.centre + newPosition : this->circle.centre + newPosition;
 
 	// Check each collision type
 	if (this->type == RECTANGLE && other.type == RECTANGLE)
 	{
-		Rect adjustedBox = this->square;
+		Rect adjustedBox = this->rectangle;
 		adjustedBox.centre = adjustedPosition;
-		return RectRectCheck(adjustedBox, other.square).collision;
+		return RectRectCheck(adjustedBox, other.rectangle).collision;
 	}
 	else if (this->type == CIRCLE && other.type == CIRCLE)
 	{
@@ -27,7 +27,7 @@ bool Collider::CheckCollision(const Collider& other, const float2& newPosition)
 	}
 	else if (this->type == RECTANGLE && other.type == CIRCLE)
 	{
-		Rect adjustedBox = this->square;
+		Rect adjustedBox = this->rectangle;
 		adjustedBox.centre = adjustedPosition;
 		return RectCircleCheck(adjustedBox, other.circle).collision;
 	}
@@ -35,7 +35,7 @@ bool Collider::CheckCollision(const Collider& other, const float2& newPosition)
 	{
 		Circle adjustedCircle = this->circle;
 		adjustedCircle.centre = adjustedPosition;
-		return RectCircleCheck(other.square, adjustedCircle).collision;
+		return RectCircleCheck(other.rectangle, adjustedCircle).collision;
 	}
 
 	// If this point is reached, the collision check is not supported
@@ -50,19 +50,19 @@ float2 Collider::Reflect(const Collider& other, float2& velocity, float deltaTim
 	// Determine the type of 'this' and 'other'
 	if (this->type == CIRCLE && other.type == RECTANGLE)
 	{
-		CollisionResult result = RectCircleCheck(other.square, this->circle);
+		CollisionResult result = RectCircleCheck(other.rectangle, this->circle);
 		if (result.collision)
 			normal = result.normal;
 	}
 	else if (this->type == RECTANGLE && other.type == CIRCLE)
 	{
-		CollisionResult result = RectCircleCheck(this->square, other.circle);
+		CollisionResult result = RectCircleCheck(this->rectangle, other.circle);
 		if (result.collision)
 			normal = result.normal;
 	}
 	else if (this->type == RECTANGLE && other.type == RECTANGLE)
 	{
-		CollisionResult result = RectRectCheck(this->square, other.square);
+		CollisionResult result = RectRectCheck(this->rectangle, other.rectangle);
 		if (result.collision)
 			normal = result.normal;
 	}
@@ -203,7 +203,7 @@ void Collider::UpdatePosition(const float2& newPosition)
 	switch (type)
 	{
 		case RECTANGLE:
-			square.centre = newPosition;
+			rectangle.centre = newPosition;
 			break;
 		case CIRCLE:
 			circle.centre = newPosition;
@@ -218,10 +218,10 @@ void Collider::Draw()
 	if (type == RECTANGLE)
 	{
 		Box squareGizmo;
-		squareGizmo.topLeft = Vector2(square.centre.x - square.extents.x, square.centre.y - square.extents.y);
-		squareGizmo.topRight = Vector2(square.centre.x + square.extents.x, square.centre.y - square.extents.y);
-		squareGizmo.bottomLeft = Vector2(square.centre.x - square.extents.x, square.centre.y + square.extents.y);
-		squareGizmo.bottomRight = Vector2(square.centre.x + square.extents.x, square.centre.y + square.extents.y);
+		squareGizmo.topLeft = Vector2(rectangle.centre.x - rectangle.extents.x, rectangle.centre.y - rectangle.extents.y);
+		squareGizmo.topRight = Vector2(rectangle.centre.x + rectangle.extents.x, rectangle.centre.y - rectangle.extents.y);
+		squareGizmo.bottomLeft = Vector2(rectangle.centre.x - rectangle.extents.x, rectangle.centre.y + rectangle.extents.y);
+		squareGizmo.bottomRight = Vector2(rectangle.centre.x + rectangle.extents.x, rectangle.centre.y + rectangle.extents.y);
 		Gizmos::DrawBox(squareGizmo, DirectX::Colors::LimeGreen, 0.0f, 1.0f);
 	}
 	else if (type == CIRCLE)
@@ -231,11 +231,15 @@ void Collider::Draw()
 		ringGizmo.radius = circle.radius;
 		Gizmos::DrawRing(ringGizmo, DirectX::Colors::LimeGreen, 0.0f, 1.0f);
 	}
+	else if (type == LINE)
+	{
+		Gizmos::DrawLine(line.start, line.end, DirectX::Colors::LimeGreen, 0.0f, 1.0f);
+	}
 }
 
 inline bool IsZeroToOne(const float t) { return t >= 0 && t <= 1; }
 
-CollisionResult Collider::LineLineCheck(const Line2D& a, const Line2D& b)
+CollisionResult Collider::LineLineCheck(const Line& a, const Line& b)
 {
 	CollisionResult result;
 	result.collision = false;
